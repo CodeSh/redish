@@ -1,14 +1,17 @@
-# redi.sh
+# redish
 
-Redi.sh is a primitive Redis client, written entirely in Bash. It allows you to read/write keys and sets from redis as if they were regular Bash variables.
+
+### Forked from original code [redi.sh](https://github.com/crypt1d/redi.sh)
+
+Redish is a primitive Redis client, written entirely in Bash. It allows you to read/write keys and sets from redis as if they were regular Bash variables.
 
 ##Usage:
 
->By default redi.sh reads input from stdin and interprets it as a variable or array (if -a is used).
+>By default redish reads input from stdin and interprets it as a variable or array (if -a is used).
 >To avoid setting redis hostname and port number with each command, you can export REDIS_HOST and REDIS_PORT variables.
 
 ```
-./redi.sh [-a] [-g <variable|array>] [-p <password>] [-H <hostname>] [-P <port>]
+redish [-a] [-g <variable|array>] [-p <password>] [-H <hostname>] [-P <port>]
 
     -a              : Tells the script that we are working with arrays, instead of regular variables.
 	-r <min,max>	: When used with -a, defines the range of elements to get from the array. Default is all (0,-1).
@@ -22,14 +25,14 @@ Redi.sh is a primitive Redis client, written entirely in Bash. It allows you to 
 ##Example:
 
 ```shell
-$ echo "this is a variable" | ./redi.sh -s testvar
-$ ./redi.sh -g testvar
+$ echo "this is a variable" | redish -s testvar
+$ redish -g testvar
 this is a variable
 ```
 
 ```shell
-$ echo red green blue | ./redi.sh -as Colors
-$ ./redi.sh -ag Colors
+$ echo red green blue | redish -as Colors
+$ redish -ag Colors
 red
 green
 blue
