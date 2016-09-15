@@ -11,7 +11,7 @@ uninstall:
 	@rm -rf $(DESTDIR)/usr/bin/redish
 	@echo "Done!"
 	
-deb:
+package:
 	@echo 'Starting process to make a new deb...'
 	@mkdir .temp
 	@mkdir -p .temp/usr/bin & mkdir -p .temp/usr/share/redish
