@@ -13,7 +13,7 @@ git clone https://github.com/CodeSh/redish
 cd redish
 sudo make install
 
-# Or in DEBIAN/Ubuntu or Mint
+# Or in DEBIAN, Ubuntu or Mint
 wget https://github.com/CodeSh/redish/releases/download/redish/redish.deb
 dpkg -i redish.deb
 ```
@@ -39,8 +39,11 @@ redish [-a] [-g <variable|array>] [-p <password>] [-H <hostname>] [-P <port>]
 
 ##Uninstall
 ```bash
-# In redish folder
+# In redish folder from make install
 sudo make uninstall
+
+# From package
+sudo apt remove redish
 ```
 
 ##Example:
